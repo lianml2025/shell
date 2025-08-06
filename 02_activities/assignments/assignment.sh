@@ -28,22 +28,41 @@ unzip -q rawdata.zip
 # Complete assignment here
 
 # 1. Create a directory named data
-
+pwd
+ls
+mkdir data
 # 2. Move the ./rawdata directory to ./data/raw
-
+cd data
+mkdir raw
+mv ../rawdata/ ../data/raw
 # 3. List the contents of the ./data/raw directory
+ls -lh ./data/raw
 
 # 4. In ./data/processed, create the following directories: server_logs, user_logs, and event_logs
 
+mkdir processed
+cd processed
+pwd
+mkdir server_logs user_logs event_logs
+
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
 
+find ../raw -type f -name '*server*.log' -exec cp {} ../processed/server_logs/ \;
+
+
 # 6. Repeat the above step for user logs and event logs
-
+find ../raw -type f -name '*user*.log' -exec cp {} ../processed/user_logs/ \;
+find ../raw -type f -name '*event*.log' -exec cp {} ../processed/event_logs/ \;
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
-
+rm raw/rawdata/*ipaddr*
+rm proccessed/user_logs/*ipaddr*
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
-
-
+touch inventory.txt
+ls
+cd processed
+pwd
+ls
+find  -type f > ../inventory.txt
 ###########################################
 
 echo "Project setup is complete!"

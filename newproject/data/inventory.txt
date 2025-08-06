@@ -48,6 +48,7 @@
 ./event_logs/event_log_7.log
 ./event_logs/event_log_8.log
 ./event_logs/event_log_9.log
+./inventory.txt
 ./server_logs/server_log_1.log
 ./server_logs/server_log_10.log
 ./server_logs/server_log_11.log
