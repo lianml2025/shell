@@ -47,6 +47,7 @@ mkdir server_logs user_logs event_logs
 
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
 
+<<<<<<< HEAD
 find ../raw -type f -name '*server*.log' -exec cp {} ../processed/server_logs/ \;
 
 
@@ -56,6 +57,18 @@ find ../raw -type f -name '*event*.log' -exec cp {} ../processed/event_logs/ \;
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
 rm raw/rawdata/*ipaddr*
 rm proccessed/user_logs/*ipaddr*
+=======
+
+find ./data/raw -type f -name '*server*.log' -exec cp {} ./data/processed/server_logs/ \;
+
+# 6. Repeat the above step for user logs and event logs
+find ./data/raw -type f -name '*user*.log' -exec cp {} ./data/processed/user_logs/ \;
+find ./data/raw -type f -name '*event*.log' -exec cp {} ./data/processed/event_logs/ \;
+# 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
+find ./data/raw -type f -name '*ipaddr*' -delete
+find ./data/processed/user_logs -type f -name '*ipaddr*' -delete
+
+>>>>>>> e6ce5e266296f114be1e8ac6116ee187f910a5da
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
 touch inventory.txt
 ls
