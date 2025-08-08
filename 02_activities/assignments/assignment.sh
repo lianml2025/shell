@@ -49,7 +49,7 @@ mkdir server_logs user_logs event_logs
 mv rawdata data/raw
 cp data/raw/server.log data/processed/server_logs/ 
 
-#cp datafind ./data/raw -type f -name '*server*.log' -exec cp {} ./data/processed/server_logs/ \;
+
 
 # 6. Repeat the above step for user logs and event logs
 #find ./data/raw -type f -name '*user*.log' -exec cp {} ./data/processed/user_logs/ \;
