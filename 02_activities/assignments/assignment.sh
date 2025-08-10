@@ -34,8 +34,7 @@ mkdir data
 # 2. Move the ./rawdata directory to ./data/raw
 cd data
 mkdir raw
-#  mv ../rawdata/ ../data/raw
-mv rawdata data/raw
+mv ../rawdata/ ../data/raw
 
 # 3. List the contents of the ./data/raw directory
 ls -lh ./data/raw
@@ -52,7 +51,7 @@ mkdir server_logs user_logs event_logs
 
 cd data
 pwd
-cp data/raw/*server*.log data/processed/server_logs/ 
+cp ./data/raw/*server*.log ./data/processed/server_logs/ 
 
 
 
