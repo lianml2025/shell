@@ -34,7 +34,7 @@ mkdir data
 # 2. Move the ./rawdata directory to ./data/raw
 cd data
 mkdir raw
-mv ../rawdata/ ../data/raw
+mv ../rawdata/ ../data/raw -f
 # 3. List the contents of the ./data/raw directory
 ls -lh ./data/raw
 
