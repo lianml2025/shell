@@ -33,10 +33,12 @@ ls
 mkdir data
 # 2. Move the ./rawdata directory to ./data/raw
 cd data
-mkdir raw
-mv ../rawdata/ ../data/raw -f
+pwd 
+mkdir raw 
+mv ../rawdata/ ../data/raw 
+
 # 3. List the contents of the ./data/raw directory
-ls -lh ./data/raw
+ls  ../data/raw
 
 # 4. In ./data/processed, create the following directories: server_logs, user_logs, and event_logs
 
@@ -44,19 +46,19 @@ mkdir processed
 cd processed
 pwd
 mkdir server_logs user_logs event_logs
-
+ls
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
 --mv rawdata data/raw
-cp data/raw/server.log data/processed/server_logs/ 
+cd ..
+cp ../data/raw/*server*.log ../data/processed/server_logs/ 
 
 
 
 # 6. Repeat the above step for user logs and event logs
 #find ./data/raw -type f -name '*user*.log' -exec cp {} ./data/processed/user_logs/ \;
 #find ./data/raw -type f -name '*event*.log' -exec cp {} ./data/processed/event_logs/ \;
-cp data/raw/user.log data/processed/user_logs/
-cp data/raw/event.log data/processed/event_logs/
-
+cp ../data/raw/*user*.log ../data/processed/user_logs/ 
+cp ../data/raw/*event*.log ../data/processed/event_logs/ 
 
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
 find ./data/raw -type f -name '*ipaddr*' -delete
