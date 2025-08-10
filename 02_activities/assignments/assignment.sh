@@ -51,7 +51,7 @@ mkdir server_logs user_logs event_logs
 
 cd data
 pwd
-cp ./data/raw/*server*.log ./data/processed/server_logs/ 
+cp data/raw/*server*.log data/processed/server_logs/ 
 
 
 
