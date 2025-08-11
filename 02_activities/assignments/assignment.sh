@@ -50,7 +50,7 @@ ls
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
 --mv rawdata data/raw
 
-cp ../raw/*server*.log ../processed/server_logs/ 
+cp ../raw/rawdata/*server*.log ../processed/server_logs/ 
 
 
 
