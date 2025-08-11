@@ -36,6 +36,7 @@ cd data
 pwd 
 mkdir raw 
 mv ../rawdata/ ../data/raw 
+mv ../rawdata/rawdata data/raw
 
 # 3. List the contents of the ./data/raw directory
 ls  ../data/raw
