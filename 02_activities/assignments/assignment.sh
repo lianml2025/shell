@@ -36,7 +36,7 @@ cd data
 pwd 
 mkdir raw 
 mv ../rawdata/ ../data/raw 
-mv ../rawdata/rawdata data/raw
+
 
 # 3. List the contents of the ./data/raw directory
 ls  ../data/raw
@@ -49,6 +49,7 @@ pwd
 mkdir server_logs user_logs event_logs
 ls
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
+
 
 
 cp ../raw/rawdata/*server*.log ../processed/server_logs/ 
