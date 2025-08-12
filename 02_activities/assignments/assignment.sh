@@ -44,11 +44,8 @@ mkdir ./data/processed
 mkdir ./data/processed/server_logs ./data/processed/user_logs ./data/processed/event_logs
 
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
-@echo off
-:: Custom cp command for Windows
-:: Usage: cp <source> <destination>
-xcopy %1 %2 /I /Y /Q
-cp ./data/raw/rawdata/*server*.log ./data/processed/server_logs/ 
+
+cp ./data/raw/*server*.log -Destination ./data/processed/server_logs/ -Verbose
 
 
 
