@@ -49,6 +49,7 @@ cp ./data/raw/rawdata/rawdata/*server*.log -Destination ./data/processed/server_
 
 
 
+
 # 6. Repeat the above step for user logs and event logs
 #find ./data/raw -type f -name '*user*.log' -exec cp {} ./data/processed/user_logs/ \;
 #find ./data/raw -type f -name '*event*.log' -exec cp {} ./data/processed/event_logs/ \;
