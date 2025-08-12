@@ -43,12 +43,13 @@ mkdir ./data/processed
 mkdir ./data/processed/server_logs ./data/processed/user_logs ./data/processed/event_logs
 
 # 5. Copy all server log files (files with "server" in the name AND a .log extension) from ./data/raw to ./data/processed/server_logs
-
-#cp ./data/raw/rawdata/*server*.log ./data/processed/server_logs/ 
-
 @echo off
-mkdir "./data/processed/server_logs" 2>nul
-xcopy "./data/raw/*server*.log" "./data/processed/server_logs/" /I /Y
+:: Custom cp command for Windows
+:: Usage: cp <source> <destination>
+xcopy %1 %2 /I /Y /Q
+cp ./data/raw/rawdata/*server*.log ./data/processed/server_logs/ 
+
+
 
 # 6. Repeat the above step for user logs and event logs
 #find ./data/raw -type f -name '*user*.log' -exec cp {} ./data/processed/user_logs/ \;
